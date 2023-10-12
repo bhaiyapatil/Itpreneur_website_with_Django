@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Itprenure Pune{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container-fluid px-4 my-4 w-100 bg-light ">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img id="slideimg" src="https://scontent.fpnq7-4.fna.fbcdn.net/v/t39.30808-6/362669825_3542184626056564_3957547481011290021_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=52f669&_nc_ohc=-Md1HvKUILkAX-zyBje&_nc_ht=scontent.fpnq7-4.fna&oh=00_AfACbOSmdSLNIFJA3Mq_wvbjrHeE4PdeivchlLYOSAhMZQ&oe=650D5057" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <img id="slideimg" src="https://itpreneurpune.com/wp-content/uploads/2017/01/Java-courses-in-Pune-1024x683.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img id="slideimg" src="https://directory.edugorilla.com/wp-content/uploads/sites/6/2017/03/15230681_1780121378929573_5100392492306591881_n.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>
+
+{% comment %} ##### {% endcomment %}
+<div class="bg-light container-fluid my-5 mt-4">
+  <h3>IT Classes in Pune</h3>
+  <p>Itpreneur the Best IT training institute in Pune has earned its name through diligent dedication towards its
+    students. As a progressive IT course institute, with state-of-the-art infrastructure,
+    iTpreneur has a vast array of IT courses for students with Industry specialized trainers in different technical
+    domains.
+  </p>
+  <p>Each student undergoes extensive industry-level corporate training while also working on various projects and
+    assignments. The training is designed to enhance students’ potential via a curated syllabus
+    co-created with the stalwarts of the IT industry.
+  </p><br>
+  <h5><b>Why iTpreneur</b></h5>
+  <p>As a leading IT classes in Pune we offer a wide range of IT courses to help individuals learn and improve their IT
+    skills. Some factors that makes our IT Institute stand out as
+    the best IT Classes include:</p>
+  <ol>
+    <div>
+      <li><b>Reputation:</b>
+        <p>Our IT Institute has won many awards or recognition for its courses, faculty, or students. Reviews and
+          testimonials from current or previous students make us
+          proud of our IT Instructors and placement teams.</p>
+      </li>
+    </div>
+    <div>
+      <li><b>IT Courses:</b>
+        <p> iTpreneur offers IT courses in advance Java, Software Testing, Dot Net, Salesforce, Android, Business Analyst courses, UI / UX, and data science. We make 
+          sure our IT courses covers the latest industry topics and skills that you need to learn, and that the course structure fits your learning style and schedule.</p>
+      </li>
+    </div>
+    <div>
+      <li><b>IT Certification:</b>
+        <p>If you are looking for certification in a specific technology, we make sure the institute offers the necessary certifications.</p>
+      </li>
+    </div>
+  </ol>
+</div><br>
+
+
+{% comment %} ###### {% endcomment %}
+<div class="container-fluid px-0 w-100% bg-light my-5">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active position-relative">
+        <img id="slidesimg" src="https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          class="d-block w-100" alt="...">
+          <div class="bread-title text-body  position-absolute top-50 start-0 translate-middle-y">
+            <h1><b>REACH YOUR HIRING GOALS AT ZERO COST&nbsp;</b></h1>
+            <h4><b>We will take care of training and induction processes while you achieve your recruitment targets.</b></h4>
+            <a class="btn btn-info" href="{% url 'contact' %}">Enquire Now</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} ########## {% endcomment %}
+<div class="album py-5 bg-light">
+  <div class="container">
+    <h3 class='text-center text-decoration-underline' >Our Top Courses</h3>
+    <div class="elementor-widget-container text-center my-4">
+      <pre><b><h5>Choose your course with complete bundle of classroom training. Each training is handled by a team of experienced 
+        professionals who has years of experience in the particular field.</h5></b></pre>
+    </div>
+    <div class="vc_empty_space" style="height: 25px"><span class="vc_empty_space_inner"></span></div>
+
+    <div class="row">
+      {% for i in j %}
+      <div class="col-md-4">
+
+        <div class="card  h-100 mb-4 box-shadow">
+          <img class="card-img-top h-70" src="{{i.image.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{i.title}}</h5>
+            <p class="card-text">{{i.summary}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a class="btn btn-primary" href="{{i.pdf.url}}">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% comment %} <a class="btn btn-secondary" href="{% static 'python sample question.pdf' %}">Download</a>
+<a class="btn btn-secondary" href="{% static 'food img.jpeg' %}">Download</a> {% endcomment %}
+
+
+{% comment %} ####### {% endcomment %}
+
+<div class='container-fluid px-0 w-100%  my-5'>
+  <h1 class='text-center text-decoration-underline text-success'>Our Placements</h1>
+  <div class="text-center mb-3">
+      {% comment %} <div class="p-2 bd-highlight ml-5"><img style="width:180px;height:150px;" src="https://itpreneurpune.com/wp-content/uploads/2022/12/ADP-3.png" alt="client"></div>
+      <div class="p-2 bd-highlight"><img style="width:180px;height:150px;" src="https://itpreneurpune.com/wp-content/uploads/2023/03/Allscripts.png" alt="client"></div>
+      <div class="p-2 bd-highlight"><img style="width:180px;height:150px;" src="https://itpreneurpune.com/wp-content/uploads/2022/12/AMSoft-Group-1.png" alt="client"></div>
+      <div class="p-2 bd-highlight"><img style="width:180px;height:150px;" src="https://itpreneurpune.com/wp-content/uploads/2022/12/CAPITA-1.png" alt="client"></div>
+      <div class="p-2 bd-highlight"><img style="width:180px;height:150px;" src="https://itpreneurpune.com/wp-content/uploads/2022/12/Tech-Mahindra-1.png" alt="client"></div>
+      <div class="p-2 bd-highlight"><img style="width:180px;height:150px;" src="https://itpreneurpune.com/wp-content/uploads/2022/12/Calsoft-1.png" alt="client"></div> {% endcomment %}
+      <img decoding="async" loading="lazy" class="alignnone wp-image-2860 size-full" src="https://itpreneurpune.com/wp-content/uploads/2021/06/itpreneur-placement-company.png" alt="itpreneur placement company" width="948" height="368">
+  </div>
+</div>
+<div class="vc_empty_space" style="height: 45px"><span class="vc_empty_space_inner"></span></div>
+
+
+{% comment %} ######### {% endcomment %}
+<div class="container-fluid px-0 w-100% bg-light">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active position-relative">
+        <img style="width:100%;height:300px;" id="slidesimg" src="https://media.istockphoto.com/id/1208673733/photo/people-holds-in-hand-a-jigsaw-puzzle-business-solutions-success-and-strategy.jpg?s=612x612&w=0&k=20&c=iHB04zn6VweIKiUUW4hb1-RLP7---pNBj41VmCcnYFU="
+          class="d-block w-100" alt="...">
+          <div class="bread-title text-success text-center translate-middle position-absolute top-50 start-50">
+            <h2 class='my-4'><b>Let's Connect</b></h2>
+            <h5><b>Get Trained Get Hired </b></h5>
+            <a class="btn btn-success my-4" href="{% url 'contact' %}"><b>Are you Interested?</b></a>
+          </div>
+      </div>    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

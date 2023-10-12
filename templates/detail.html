@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <div class="container p-5 w-75" style="text-align:justify" >
+
+        <h1 class="text-center text-primary">{{blog.title}}</h1>
+        <p class="text-center text-primary">{{blog.pub_date_preety}}</p>
+        <img src="{{blog.image.url}}" style="height:300px;width:100%">
+        <br>
+        <h5 class="text-align:justify mt-3 p-2">{{blog.body}}</h5>
+
+    </div>
+
+   </main>
+   
+{% endblock %}

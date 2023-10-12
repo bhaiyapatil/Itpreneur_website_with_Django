@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Itprenure Pune{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid px-0 w-100% bg-light ">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active position-relative">
+        <img id="slidesimg" src="https://media.istockphoto.com/id/876037482/photo/a-man-using-laptop-computer-working-on-new-project-idea-in-the-office-late-at-night.jpg?s=612x612&w=0&k=20&c=iiRLy_J77-jkhFT1TUOjTYAdXhnpwRlqJT4SqeqBoSg="
+          class="d-block w-100" alt="...">
+          <div class="bread-title text-light  position-absolute top-50 start-0 translate-middle-y">
+            <h1><b>Best Blogs</b></h1>
+            <h4>your Blog is your best networking tool.</h4>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row">
+            {% for i in b %}
+            <div class="col-md-4">
+
+                <div class="card  h-100 mb-4 box-shadow">
+                    <h3 class="card-title">{{i.title}}</h3>
+                    <h5 class="card-title">{{i.pub_date}}</h5>
+                    <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{i.summary}}</p>
+                        <a href="{% url 'detail' i.id %}">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+          
+        </div>
+    </div>
+</div>
+
+
+{% comment %} ################ {% endcomment %}
+
+
+
+
+{% endblock %}

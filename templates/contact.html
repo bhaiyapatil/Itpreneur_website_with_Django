@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid px-0 w-100% bg-light ">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active position-relative">
+        <img id="slidesimg" src="https://cdn.pixabay.com/photo/2018/05/11/09/05/finger-3389911_1280.jpg"
+          class="d-block w-100" alt="...">
+        <h1 class="bread-title text-white  position-absolute top-50 start-50 translate-middle-y ">Contact</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container bg-light  my-5">
+  <div class="vc_empty_space" style="height: 20px"><span class="vc_empty_space_inner"></span></div>
+  <h1 style="text-align: center" class="vc_custom_heading">Contact Details</h1>
+  <div class="wpb_text_column wpb_content_element ">
+    <div class="wpb_wrapper">
+      <p style="text-align: center;">Our head office is located at Pune</p>
+
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 d-flex ">
+    <div class="image my-2 mx-2">
+      <img src="https://itpreneurpune.com/wp-content/uploads/2017/01/location.jpg" alt="">
+    </div>
+    <div class="media-info">
+      <h3 class="title">DECCAN, JM ROAD</h3>
+      <div class="content">2nd floor, karnik Corner, Jangali Maharaj Road,
+        Shivajinagar, Pune – 411004. +91 8237002020 / 08087423030 / 9689999090
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div>
+<div class="widget widget-text-heading  style2 mt-5">
+  <h3 class="title text-center">
+    Drop Us a Message </h3>
+</div>
+<div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div>
+<div class="container bg-light">
+  <form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" name="name" class="form-control" id="name">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address:</label>
+      <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="contact" class="form-label">Phone No.:</label>
+      <input type="text" name="contact" class="form-control" id="contact">
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Message:</label>
+      <textarea name="desc" id="desc" cols="15" rows="6" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div><br>
+<br><br>
+
+
+{% endblock %}
